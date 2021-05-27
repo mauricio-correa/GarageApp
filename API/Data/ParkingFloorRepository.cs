@@ -46,6 +46,7 @@ namespace API.Data
 
             return await query
               .ProjectTo<ParkingFloorDto>(_mapper.ConfigurationProvider)
+              .OrderBy(p => p.FloorNr)
               .ToListAsync();
         }
 
